@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onion Services &amp; Impact | Tor Network Research</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="logo">
+      <img src="images/logo-ring.svg" alt="" class="ring" width="26" height="26">
+      Tor Network Research
+    </div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="topic1.html">Origins</a>
+      <a href="topic2.html">How It Works</a>
+      <a href="topic3.html" class="active">Onion Services &amp; Impact</a>
+      <a href="key-concepts.html">Key Concepts</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Topic 3</p>
+    <h1>Onion Services, Dual-Use Impact, and What's Next</h1>
+    <p class="lede">
+      Beyond anonymous browsing of the public internet, Tor supports a fully
+      self-contained ecosystem of hidden servers, and its anonymity guarantees
+      are used by very different people for very different reasons.
+    </p>
+
+    <h2>How onion services work</h2>
+    <p>
+      An <strong>onion service</strong> lets an operator host a website (or other
+      service) without ever revealing its server's location, reachable only through
+      a unique, cryptographically derived address. Connecting to one skips the
+      cleartext exit nodes entirely:
+    </p>
+    <ol>
+      <li>The service builds circuits to several relays called <strong>introduction points</strong> and publishes its address to a distributed directory.</li>
+      <li>A client picks a random relay to act as a <strong>rendezvous point</strong> and builds a circuit to it.</li>
+      <li>The client sends an encrypted introduction message, through an introduction point, naming the rendezvous point and a one-time authorization token.</li>
+      <li>The onion service builds its own circuit to that rendezvous point, matches the token, and the two three-hop circuits are joined.</li>
+    </ol>
+    <p>
+      The result is a six-hop connection where <strong>neither side</strong> learns
+      the other's real network location.
+    </p>
+
+    <h2>A dual-use technology</h2>
+    <p>
+      That same anonymity guarantee cuts both ways:
+    </p>
+    <ul>
+      <li>
+        <strong>Protective uses:</strong> investigative journalists, whistleblowers,
+        and human rights defenders in authoritarian regions rely on onion services to
+        transmit leaks about corruption or abuses without exposing their location.
+      </li>
+      <li>
+        <strong>Malicious uses:</strong> the same guarantees are exploited by dark-web
+        marketplaces, ransomware operators, and state-sponsored threat groups, whose
+        infrastructure resists domain seizure because it lives on onion services
+        rather than the regular DNS system.
+      </li>
+    </ul>
+
+    <h2>Why security teams use Tor too</h2>
+    <p>
+      For cybersecurity and OSINT analysts, visiting a threat actor's
+      command-and-control infrastructure directly from a corporate network is
+      dangerous - it exposes the organization and tips off the adversary that
+      it's under investigation. Tor gives analysts <strong>managed attribution</strong>:
+      probes and monitoring appear to come from shifting, random exit nodes instead of
+      the analyst's real network.
+    </p>
+
+    <h2>Where Tor is still vulnerable</h2>
+    <p>
+      Tor's low-latency design (it doesn't intentionally delay or reorder packets)
+      makes it vulnerable to <strong>traffic correlation</strong>: an adversary who can
+      watch both the entry and exit traffic at once may match the timing and volume of
+      a data spike entering a guard node to an identical spike leaving an exit node,
+      breaking the anonymity of that circuit. Most ISPs only see one end of that
+      equation - but large, cross-jurisdictional network operators may not.
+    </p>
+
+    <h2>The quantum computing question</h2>
+    <p>
+      Tor's circuit handshakes currently rely on elliptic-curve Diffie-Hellman, which
+      a sufficiently powerful quantum computer running <strong>Shor's algorithm</strong>
+      could break. Adversaries are already running "store now, decrypt later"
+      strategies, archiving encrypted Tor traffic today in hopes of reading it
+      once quantum hardware catches up. In response, the Tor Project is prototyping
+      hybrid handshakes that combine traditional elliptic-curve cryptography with
+      post-quantum key-encapsulation mechanisms.
+    </p>
+
+    <div class="callout">
+      <strong>Takeaway:</strong> Tor's biggest engineering challenge isn't the math
+      inside a single connection - it's staying ahead of adversaries who can
+      watch the network from the outside, whether that's through timing attacks today
+      or quantum cryptanalysis tomorrow.
+    </div>
+
+    <hr class="divider">
+    <p><a href="key-concepts.html">Next: Key Concepts &rarr;</a></p>
+  </main>
+
+  <footer>
+    This site is a class project for
+    <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203 Web Development</a>.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

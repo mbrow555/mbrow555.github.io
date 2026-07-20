@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Tor Network Research</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="logo">
+      <img src="images/logo-ring.svg" alt="" class="ring" width="26" height="26">
+      Tor Network Research
+    </div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="topic1.html">Origins</a>
+      <a href="topic2.html">How It Works</a>
+      <a href="topic3.html">Onion Services &amp; Impact</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="key-concepts.html">Key Concepts</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Self-Assessment</p>
+    <h1>Test Your Understanding</h1>
+    <p class="lede">
+      Five questions covering the origins, mechanics, and impact of the Tor
+      network. Submit to see your score and the correct answers.
+    </p>
+
+    <!--
+      QUIZ FORM
+      - Q1 is fill-in-the-blank (text input)
+      - Q2, Q3, Q4 are multiple-choice, single answer (radio buttons)
+      - Q5 is multi-select, more than one correct answer (checkboxes)
+      The form's normal submit is intercepted in js/main.js so the page
+      doesn't reload; that's what lets us show results instantly below.
+    -->
+    <form id="quiz-form" class="quiz-form">
+
+      <!-- Question 1: fill in the blank -->
+      <fieldset>
+        <legend>1. Fill in the blank</legend>
+        <p>
+          Tor builds a circuit one encrypted hop at a time using a technique
+          called
+          <input type="text" id="q1" name="q1" placeholder="your answer">
+          circuit construction.
+        </p>
+      </fieldset>
+
+      <!-- Question 2: multiple choice, single correct answer -->
+      <fieldset>
+        <legend>2. Which relay in a Tor circuit knows the user's real IP address?</legend>
+        <label class="option">
+          <input type="radio" name="q2" value="guard"> Guard (entry) node
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="middle"> Middle node
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="exit"> Exit node
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="directory"> Directory Authority
+        </label>
+      </fieldset>
+
+      <!-- Question 3: multiple choice, single correct answer -->
+      <fieldset>
+        <legend>3. What does the exit node do?</legend>
+        <label class="option">
+          <input type="radio" name="q3" value="encrypt"> Encrypts the traffic three times
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="ip"> Learns the user's real IP address
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="strip"> Strips the final encryption layer and forwards data to the destination
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="consensus"> Publishes the network consensus
+        </label>
+      </fieldset>
+
+      <!-- Question 4: multiple choice, single correct answer -->
+      <fieldset>
+        <legend>4. Which cryptographic curve does Tor's ntor handshake use?</legend>
+        <label class="option">
+          <input type="radio" name="q4" value="rsa"> RSA-2048
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="curve25519"> Curve25519
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="aes"> AES-256
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="sha1"> SHA-1
+        </label>
+      </fieldset>
+
+      <!-- Question 5: multi-select, more than one correct answer -->
+      <fieldset>
+        <legend>5. Which of the following are true about onion services? (select all that apply)</legend>
+        <label class="option">
+          <input type="checkbox" name="q5" value="a"> They are reachable only through the Tor network
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q5" value="b"> They use introduction points and a rendezvous point to connect
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q5" value="c"> They rely on a regular exit node to reach the destination server
+        </label>
+        <label class="option">
+          <input type="checkbox" name="q5" value="d"> They give both the visitor and the host mutual anonymity
+        </label>
+      </fieldset>
+
+      <div class="quiz-buttons">
+        <button type="submit" class="btn btn-primary">Submit Quiz</button>
+        <button type="button" id="reset-btn" class="btn btn-secondary">Reset Quiz</button>
+      </div>
+    </form>
+
+    <!-- Results are injected here by JavaScript after submission -->
+    <div id="quiz-results"></div>
+  </main>
+
+  <footer>
+    This site is a class project for
+    <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203 Web Development</a>.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

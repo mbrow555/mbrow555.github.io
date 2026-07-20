@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Concepts | Tor Network Research</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="logo">
+      <img src="images/logo-ring.svg" alt="" class="ring" width="26" height="26">
+      Tor Network Research
+    </div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="topic1.html">Origins</a>
+      <a href="topic2.html">How It Works</a>
+      <a href="topic3.html">Onion Services &amp; Impact</a>
+      <a href="key-concepts.html" class="active">Key Concepts</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Reference</p>
+    <h1>Key Concepts</h1>
+    <p class="lede">
+      Seven terms worth knowing before diving into the topic pages, in short form.
+    </p>
+
+    <!-- CSS Grid of concept cards -->
+    <div class="concept-grid">
+      <div class="concept-card">
+        <h3>Onion Routing</h3>
+        <p>Wrapping a message in multiple layers of encryption, one per relay, so each
+           relay can only peel off its own layer, like peeling an onion.</p>
+      </div>
+      <div class="concept-card">
+        <h3>Directory Authorities</h3>
+        <p>Nine trusted server clusters that measure relay health hourly and publish a
+           signed "network consensus" listing which relays are active.</p>
+      </div>
+      <div class="concept-card">
+        <h3>Telescoping Circuit</h3>
+        <p>A three-hop path (guard, middle, exit) built one encrypted hop at a time so
+           no single relay ever learns the full path.</p>
+      </div>
+      <div class="concept-card">
+        <h3>ntor Handshake</h3>
+        <p>The Curve25519-based key exchange Tor uses to negotiate a separate
+           symmetric key with each relay in a circuit.</p>
+      </div>
+      <div class="concept-card">
+        <h3>Onion Service</h3>
+        <p>A server reachable only through Tor via a cryptographic address, giving
+           both visitor and host mutual anonymity.</p>
+      </div>
+      <div class="concept-card">
+        <h3>Traffic Correlation Attack</h3>
+        <p>An attack that matches the timing/volume of data entering a guard node to
+           data leaving an exit node, potentially deanonymizing a circuit.</p>
+      </div>
+      <div class="concept-card">
+        <h3>Post-Quantum Cryptography</h3>
+        <p>Cryptographic algorithms designed to resist attacks from quantum computers,
+           being blended into Tor's handshakes to defend against future decryption.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    This site is a class project for
+    <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203 Web Development</a>.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

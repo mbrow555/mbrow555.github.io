@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onion Routing Explained | Tor Network Research</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- - Site header / consistent nav (same block on every page) - -->
+  <header id="site-header">
+    <div class="logo">
+      <img src="images/logo-ring.svg" alt="" class="ring" width="26" height="26">
+      Tor Network Research
+    </div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="topic1.html">Origins</a>
+      <a href="topic2.html">How It Works</a>
+      <a href="topic3.html">Onion Services &amp; Impact</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="key-concepts.html">Key Concepts</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- - Homepage / cover page - -->
+    <p class="eyebrow">IT 3203 - Web Development Project</p>
+    <h1>Research on Web Evolution: A Technical Analysis of the Tor Network</h1>
+
+    <p class="lede">
+      The World Wide Web was designed for open, transparent access to information -
+      not for network-layer privacy. Every request you send exposes metadata that
+      reveals who is talking to whom. This site explores <strong>Tor</strong>, the most
+      widely deployed low-latency anonymity network, from its origins in naval research
+      to the cryptography that keeps millions of users untraceable today.
+    </p>
+
+    <div class="key-terms">
+      <span>onion routing</span>
+      <span>Tor</span>
+      <span>anonymity network</span>
+      <span>traffic correlation</span>
+      <span>onion services</span>
+      <span>post-quantum crypto</span>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Explore this site</h2>
+    <p class="lede lede-sub">
+      Use the cards below (or the menu at the top of every page) to jump to a section.
+    </p>
+
+    <!-- Table of contents: implemented as a CSS Grid of cards -->
+    <div class="toc-grid">
+      <a href="topic1.html" class="toc-link">
+        <div class="toc-card">
+          <h3>1. Origins &amp; Evolution</h3>
+          <p>From a U.S. Naval Research Lab project in the 1990s to a volunteer-run
+             global non-profit network.</p>
+        </div>
+      </a>
+      <a href="topic2.html" class="toc-link">
+        <div class="toc-card">
+          <h3>2. How Tor Works</h3>
+          <p>Directory authorities, three-hop circuits, and the layered encryption
+             that gives onion routing its name.</p>
+        </div>
+      </a>
+      <a href="topic3.html" class="toc-link">
+        <div class="toc-card">
+          <h3>3. Onion Services &amp; Real-World Impact</h3>
+          <p>Hidden services, dual-use technology, and why cybersecurity analysts
+             rely on Tor.</p>
+        </div>
+      </a>
+      <a href="quiz.html" class="toc-link">
+        <div class="toc-card">
+          <h3>Self-Assessment Quiz</h3>
+          <p>Five questions to test what you learned. Instant scoring with
+             color-coded results.</p>
+        </div>
+      </a>
+      <a href="key-concepts.html" class="toc-link">
+        <div class="toc-card">
+          <h3>Key Concepts</h3>
+          <p>Seven core terms and mechanisms explained in short form.</p>
+        </div>
+      </a>
+      <a href="references.html" class="toc-link">
+        <div class="toc-card">
+          <h3>References &amp; Resources</h3>
+          <p>Sources used in this research and recommended further reading.</p>
+        </div>
+      </a>
+      <a href="about.html" class="toc-link">
+        <div class="toc-card">
+          <h3>About</h3>
+          <p>About me and about this project.</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- - Footer: required class-project notice - -->
+  <footer>
+    This site is a class project for
+    <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">IT 3203 Web Development</a>.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
