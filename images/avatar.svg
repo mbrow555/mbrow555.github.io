@@ -1,1 +1,7 @@
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+  <rect width="140" height="140" fill="#232936"/>
+  <circle cx="70" cy="55" r="28" fill="#9384e0" opacity="0.85"/>
+  <path d="M20 130 C20 95 45 85 70 85 C95 85 120 95 120 130 Z" fill="#9384e0" opacity="0.55"/>
+  <!-- Replace this file with an actual photo of yourself, e.g. images/avatar.jpg,
+       and update the src attribute on the About page. -->
+</svg>
